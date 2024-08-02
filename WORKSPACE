@@ -24,6 +24,7 @@ kt_register_toolchains()
 
 android_sdk_repository(
     name = "androidsdk",
-    api_level = 30,
-    build_tools_version = "30.0.3",
+    api_level = 34,
+    build_tools_version = "34.0.0",
+    path = "/Users/alvinportillo/Library/Android/sdk",
 )

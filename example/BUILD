@@ -9,6 +9,8 @@ kt_android_library(
     manifest = "main/java/com/example/kotlinactivityapp/LibraryManifest.xml",
     resource_files = glob(["main/res/**/*"]),
     deps = [
+        "@maven//:androidx_appcompat_appcompat",
+        "@maven//:androidx_games_games_activity",
     ],
 )
 

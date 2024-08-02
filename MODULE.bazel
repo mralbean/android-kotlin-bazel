@@ -4,3 +4,23 @@
 #
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
+
+"Bazel dependencies"
+
+bazel_dep(name = "platforms", version = "0.0.8")
+bazel_dep(name = "rules_jvm_external", version = "5.3")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "androidx.games:games-activity:aar:3.0.4",
+        "androidx.appcompat:appcompat:1.6.1",
+        "androidx.lifecycle:lifecycle-runtime:2.5.1",
+    ],
+    repositories = [
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+    ],
+    version_conflict_policy = "pinned",
+)
+use_repo(maven, "maven")
